@@ -25,6 +25,7 @@ import com.netflix.zuul.filters.FilterType;
 import com.netflix.zuul.filters.http.HttpInboundSyncFilter;
 import com.netflix.zuul.message.http.HttpQueryParams;
 import com.netflix.zuul.message.http.HttpRequestMessage;
+import lombok.NonNull;
 
 /**
  * This is an abstract filter that will route requests that match the patternMatches() method to a debug Eureka "VIP" or
@@ -71,7 +72,7 @@ public class SurgicalDebugFilter extends HttpInboundSyncFilter {
 
 
     @Override
-    public HttpRequestMessage apply(HttpRequestMessage request) {
+    public HttpRequestMessage apply(@NonNull HttpRequestMessage request) {
         DynamicStringProperty routeVip = new DynamicStringProperty(ZuulConstants.ZUUL_DEBUG_VIP, null);
         DynamicStringProperty routeHost = new DynamicStringProperty(ZuulConstants.ZUUL_DEBUG_HOST, null);
 
