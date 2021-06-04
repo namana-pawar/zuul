@@ -72,7 +72,7 @@ public class SurgicalDebugFilter extends HttpInboundSyncFilter {
 
 
     @Override
-    public HttpRequestMessage apply(@NonNull HttpRequestMessage request) {
+    public HttpRequestMessage apply(@NonNull  HttpRequestMessage request) {
         DynamicStringProperty routeVip = new DynamicStringProperty(ZuulConstants.ZUUL_DEBUG_VIP, null);
         DynamicStringProperty routeHost = new DynamicStringProperty(ZuulConstants.ZUUL_DEBUG_HOST, null);
 
