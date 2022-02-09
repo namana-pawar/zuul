@@ -31,6 +31,7 @@ AWS re:Invent 2018 - Scaling push messaging for millions of Netflix devices: htt
  
 ---
 
+
 Slides from Netflix presentations about Zuul:
 
 http://www.slideshare.net/MikeyCohen1/zuul-netflix-springone-platform
