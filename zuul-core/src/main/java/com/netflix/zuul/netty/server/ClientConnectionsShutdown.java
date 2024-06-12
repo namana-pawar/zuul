@@ -150,7 +150,10 @@ public class ClientConnectionsShutdown
             LOG.warn(forceCloseFutures.size() + " client channels closed.");
         }
         catch (InterruptedException ie) {
-            LOG.warn("Interrupted while shutting down client channels");
+            // adding a fake comment
+            LOG.warn("Interrupted while shutting down client channels", ie);
+            Thread.currentThread().interrupt();
+            throw ie;
         }
     }
 }
