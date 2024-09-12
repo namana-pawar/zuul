@@ -46,30 +46,31 @@ public class JsonUtility {
             JsonDocument json = new JsonDocument();
             json.startGroup();
 
+            /**
             for (String key : jsonData.keySet()) {
-                Object data = jsonData.get(key);
-                if (data instanceof Map) {
-                    /* it's a nested map, so we'll recursively add the JSON of this map to the current JSON */
+              *  Object data = jsonData.get(key);
+               * if (data instanceof Map) {
+                    /* it's a nested map, so we'll recursively add the JSON of this map to the current JSON 
                     json.addValue(key, jsonFromMap((Map<String, Object>) data));
                 } else if (data instanceof Object[]) {
-                    /* it's an object array, so we'll iterate the elements and put them all in here */
+                    /* it's an object array, so we'll iterate the elements and put them all in here 
                     json.addValue(key, "[" + stringArrayFromObjectArray((Object[]) data) + "]");
                 } else if (data instanceof Collection) {
-                    /* it's a collection, so we'll iterate the elements and put them all in here */
+                    /* it's a collection, so we'll iterate the elements and put them all in here 
                     json.addValue(key, "[" + stringArrayFromObjectArray(((Collection) data).toArray()) + "]");
                 } else if (data instanceof int[]) {
                     /* it's an int array, so we'll get the string representation */
                     String intArray = Arrays.toString((int[]) data);
-                    /* remove whitespace */
+                    /* remove whitespace 
                     intArray = intArray.replaceAll(" ", "");
                     json.addValue(key, intArray);
                 } else if (data instanceof JsonCapableObject) {
                     json.addValue(key, jsonFromMap(((JsonCapableObject) data).jsonMap()));
                 } else {
-                    /* all other objects we assume we are to just put the string value in */
+                    /* all other objects we assume we are to just put the string value in 
                     json.addValue(key, String.valueOf(data));
                 }
-            }
+            }*/
 
             json.endGroup();
 
