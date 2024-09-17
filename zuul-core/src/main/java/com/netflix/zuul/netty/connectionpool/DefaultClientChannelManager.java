@@ -59,38 +59,6 @@ import org.slf4j.LoggerFactory;
  * Time: 12:39 PM
  */
 public class DefaultClientChannelManager implements ClientChannelManager {
-    private static final Logger LOG = LoggerFactory.getLogger(DefaultClientChannelManager.class);
-
-    public static final String METRIC_PREFIX = "connectionpool";
-
-    private final Resolver <? extends DiscoveryResult> dynamicServerResolver;
-    private final ConnectionPoolConfig connPoolConfig;
-    private final IClientConfig clientConfig;
-    private final Registry spectatorRegistry;
-
-    private final OriginName originName;
-
-    private static final Throwable SHUTTING_DOWN_ERR = new IllegalStateException("ConnectionPool is shutting down now.");
-    private volatile boolean shuttingDown = false;
-
-    private final Counter createNewConnCounter;
-    private final Counter createConnSucceededCounter;
-    private final Counter createConnFailedCounter;
-
-    private final Counter closeConnCounter;
-    private final Counter requestConnCounter;
-    private final Counter reuseConnCounter;
-    private final Counter releaseConnCounter;
-    private final Counter alreadyClosedCounter;
-    private final Counter connTakenFromPoolIsNotOpen;
-    private final Counter maxConnsPerHostExceededCounter;
-    private final Counter closeWrtBusyConnCounter;
-    private final PercentileTimer connEstablishTimer;
-    private final AtomicInteger connsInPool;
-    private final AtomicInteger connsInUse;
-
-    private final ConcurrentHashMap<DiscoveryResult, IConnectionPool> perServerPools;
-
     private NettyClientConnectionFactory clientConnFactory;
     private OriginChannelInitializer channelInitializer;
 
