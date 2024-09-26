@@ -47,6 +47,10 @@ public class ConnectionPoolConfigImpl implements ConnectionPoolConfig {
 
 
     public ConnectionPoolConfigImpl(final OriginName originName, IClientConfig clientConfig) {
+        if(clientConfig == null)
+        {
+            throw new InvalidInputParameter("client config is null");
+        }
         this.originName = Objects.requireNonNull(originName, "originName");
         String niwsClientName = originName.getNiwsClientName();
         this.clientConfig = clientConfig;
