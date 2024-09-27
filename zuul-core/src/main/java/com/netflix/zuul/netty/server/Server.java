@@ -428,7 +428,9 @@ public class Server
                 try {
                     group.awaitTermination(20, TimeUnit.SECONDS);
                 } catch (InterruptedException ie) {
+                    /*
                     LOG.warn("Interrupted while shutting down event loop");
+                    */
                 }
             }
             try {
